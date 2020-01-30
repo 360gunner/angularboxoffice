@@ -1,0 +1,43 @@
+<div *ngIf="!movie" class="text-center">
+  <img src="/assets/images/loading.gif" alt="loading..">
+</div>
+<div class="row" *ngIf="movie">
+  <div class="col-md-4">
+      <img src={{im}}{{movie.poster_path}} [alt]="movie.title" class="img img-thumbnail">
+  </div>
+  <div class="col-md-8">
+      <h3>{{ movie.title }}</h3>
+
+      <table class="table">
+          <tbody>
+
+              <tr>
+                  <td>homepage</td>
+                  <td>{{ movie.homepage }}</td>
+              </tr>
+              <tr>
+                  <td>overview</td>
+                  <td>{{ movie.overview }}</td>
+              </tr>
+              <tr>
+                  <td>popularity</td>
+                  <td>{{ movie.popularity }}</td>
+              </tr>
+              <tr>
+                  <td>release_date</td>
+                  <td>{{ movie.release_date }}</td>
+              </tr>
+
+              <tr>
+                  <td>tagline</td>
+                  <td>{{ movie.tagline }}</td>
+              </tr>
+              <tr>
+                <td>vote_average</td>
+                <td>{{ movie.vote_average }}</td>
+              </tr>
+          </tbody>
+      </table>
+      <button class="btn btn-primary" (click)="goBack()">Back</button>
+  </div>
+</div>
